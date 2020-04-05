@@ -6,6 +6,10 @@
 	src: url("../fonts/VCR_OSD_MONO_1.001.ttf");
 	font-family: "VCR";
 }
+@font-face {
+	src: url("../fonts/Gilbert-Color.otf");
+	font-family: "GBC";
+}
 
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap");
 $family-sans-serif: "Work Sans";
@@ -43,7 +47,7 @@ section {
 	width: 100%;
 	font-size: 8vw;
 	line-height: 1;
-	font-family: "Arcon";
+	font-family: "GBC";
 	color: #da3ab3;
 }
 .top-tagline {
