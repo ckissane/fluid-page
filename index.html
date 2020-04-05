@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Fluid Page</title>
+	<link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css" />
+	<link rel="stylesheet" href="sass/style.scss" />
+	<script>
+		!function () { var o = /(.*)\.micro\-ome\.ga/.exec(window.location.hostname); if ((null === o || "www" === o[1] && location.pathname.split("/").length > 1 && location.pathname.split("/")[1].length > 0) && "localhost" !== location.hostname) { var t = location.pathname.split("/")[1], n = location.protocol + "//www." + t + ".micro-ome.ga/" + location.pathname.split("/").filter(function (o) { return o.length > 0 }).slice(1).concat([""]).join("/") + (location.hash ? "#" + location.hash : ""); window.location = n } }();
+	</script>
+</head>
+
+<body>
+	<canvas id="c"></canvas>
+	<div id="page">
+		<section id="top" class="hero is-medium" data-aos="fade">
+			<div class="hero-body">
+				<p id="main-text" class="has-text-centered">
+					<span class="big"><img class="gilbert-img" src="./img/HELLO-GILBERT.png"><br />
+						World</span><br />
+					This is text you can select.
+				</p>
+			</div>
+		</section>
+
+	</div>
+	<script src="js/index.js"></script>
+</body>
+
+</html>

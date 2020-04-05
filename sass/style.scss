@@ -1,0 +1,255 @@
+@font-face {
+	src: url("../arcon-font/Arcon-Regular.otf");
+	font-family: "Arcon";
+}
+@font-face {
+	src: url("../fonts/VCR_OSD_MONO_1.001.ttf");
+	font-family: "VCR";
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap");
+$family-sans-serif: "Work Sans";
+$red: #ff4e21;
+$yellow: #ffc621;
+$text-strong: #000000;
+$text: #bebebe;
+@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+html {
+	padding: 0;
+	font-family: "Work Sans", sans-serif;
+}
+#c {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1000;
+	background: white;
+	pointer-events: none;
+}
+section {
+	padding-bottom: 15em;
+}
+.big{
+	font-size:20vh;
+}
+.fc {
+	height: 1em;
+}
+
+#main-text {
+	width: 100%;
+	font-size: 8vw;
+	line-height: 1;
+	font-family: "Arcon";
+	color: #da3ab3;
+}
+.top-tagline {
+	font-size: 3vw;
+	color: black;
+	font-style: bold;
+}
+
+.skill-icon {
+	font-size: 128px;
+}
+
+$red-color: #ff4e21;
+$gold-color: #ffc621;
+a {
+	color: $red-color;
+	text-decoration: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+#main-wrapper {
+	@include desktop {
+		margin-top: 1.25rem;
+	}
+	> .columns > .column > .box {
+		padding-top: 2.5rem;
+		@include desktop {
+			padding-top: 1.25rem;
+		}
+		background: transparent !important;
+	}
+}
+
+h1 {
+	font-family: "Arcon";
+	font-size: 6em;
+	font-weight: bold;
+	margin: 0px;
+	line-height: 1;
+}
+
+h1.gold,
+h2.gold,
+span.gold {
+	background: linear-gradient(45deg, #3835f9, #1ad3a3, #ffeb3b, #ee524a);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	height: 1.2em;
+	font-family: "VCR";
+}
+.gilbert-img{
+	height: 0.8em;
+	display: inline;
+}
+
+h1.red,
+h2.red {
+	color: $red-color;
+}
+
+h2 {
+	font-family: "Arcon";
+	font-size: 6em;
+	font-weight: bold;
+	margin: 0px;
+	color: rgb(227, 227, 227);
+	line-height: 1;
+}
+
+.navbar .container {
+	padding: 1.125rem 1.25rem !important;
+	display: flex !important;
+	max-width: 900px;
+	box-sizing: border-box;
+	transition: box-shadow 1s;
+}
+
+.dash-hr {
+	width: 40px;
+	text-align: left;
+	display: block;
+	margin-left: 0;
+	border: 1px solid $red-color;
+}
+
+.spacer {
+	height: 0px;
+	&.sticky {
+		height: 52px;
+	}
+}
+
+.section.skills {
+	width: 100%;
+	.box {
+		height: 100%;
+		.content .columns {
+			.column ul {
+				list-style: none;
+				margin-left: 0;
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+.section.skills {
+	.column {
+		&:nth-child(1) {
+			.box {
+				background: linear-gradient(45deg, $blue, $purple);
+			}
+		}
+		&:nth-child(2) {
+			.box {
+				background: linear-gradient(45deg, $purple, $red);
+			}
+		}
+		&:nth-child(3) {
+			.box {
+				background: linear-gradient(45deg, $red, mix($red, $yellow));
+			}
+		}
+		&:nth-child(4) {
+			.box {
+				background: linear-gradient(45deg, mix($red, $yellow), $yellow);
+			}
+		}
+	}
+}
+
+.section.skills .box .content .columns {
+	flex-wrap: wrap;
+}
+
+.projects .project-grid figure {
+	overflow: hidden;
+	border-radius: 6px;
+	img.project-thumb {
+		background: transparent;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		-webkit-transition: 0.25s ease-in-out;
+		transition: 0.25s ease-in-out;
+	}
+	figcaption {
+		display: -webkit-box;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		flex-direction: column;
+		-webkit-box-pack: center;
+		justify-content: center;
+		padding: 0rem 3rem;
+		h1,
+		a {
+			color: #fff !important;
+		}
+		z-index: 1;
+	}
+}
+
+.projects .project-grid .overlay,
+.projects .project-grid figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	-webkit-transition: 0.45s ease-in-out;
+	transition: 0.45s ease-in-out;
+}
+
+.projects .project-grid figure:hover img {
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.projects .project-grid figure:hover .overlay,
+.projects .project-grid figure:hover figcaption,
+.projects .project-grid figure.no-image .overlay,
+.projects .project-grid figure.no-image figcaption {
+	opacity: 1;
+}
+
+.projects .project-grid .overlay {
+	background-color: $red;
+}
+
+.projects .project-grid figure:hover .overlay,
+.projects .project-grid figure:hover figcaption {
+	opacity: 1;
+}
+
+#main-wrapper {
+	> .columns {
+		margin: 0;
+		> .column {
+			padding: 0;
+		}
+	}
+}
