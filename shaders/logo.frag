@@ -15,6 +15,7 @@ void main(void) {
     ler=0.1;
   }
   if(logo.w<0.5){ler=0.0; }
+  ler=0.0;
   
   vec4 newColor=texture2D(density, coords)*(1.0-ler)+ logo * ler;
   gl_FragColor = newColor;

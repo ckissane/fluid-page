@@ -61,7 +61,7 @@ const scrollk = regl({
 
 const img = new Image();
 img.src = imgURL;
-let logo_tex;
+let logo_tex=regl.texture(1,1);
 let logo;
 img.onload = () => {
 	logo_tex = regl.texture(img);
@@ -88,9 +88,11 @@ var renderedScrollY=window.scrollY;
 var lastScrollY=window.scrollY+0.0;
 const renderM = () => {
 	renderingScrollY=window.scrollY
-
+	// document.querySelector("#page").style.visibility="visible";
 domtoimage.toPng(document.querySelector("#page"),{imagePlaceholder:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="})
 .then(function (dataUrl) {
+
+	// document.querySelector("#page").style.visibility="hidden";
 	var img = new Image();
 	img.src = dataUrl;
 	wholeCanvas = img;
@@ -195,6 +197,13 @@ export const display = regl({
 	frag: displayShader,
 	uniforms: {
 		density: () => density.read,
+		velocity: () => velocity.read,
+		image: ()=>logo_tex,
+			// ratio: ({ viewportWidth, viewportHeight }) => {
+			// 	return [1, 1];// viewportWidth > viewportHeight ? [viewportWidth / viewportHeight, 1.0] : [1.0, viewportHeight / viewportWidth];
+			// },
+			// scroll: () => 0,
+		texelSize,
 	},
 });
 
